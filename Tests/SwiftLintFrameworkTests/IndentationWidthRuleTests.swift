@@ -138,6 +138,10 @@ class IndentationWidthRuleTests: XCTestCase {
             in: "firstLine\n\tsecondLine\n\t\tthirdLine\n/*test\n  bad indent...\n test*/\n\t\tfourthLine",
             includeComments: false
         )
+        assertNoViolation(
+            in: "firstLine\n\tsecondLine\n//\t\tthirdLine\n\t\tfourthLine",
+            includeComments: false
+        )
     }
 
     /// Duplicate warnings for one actual indentation issue should be avoided.
